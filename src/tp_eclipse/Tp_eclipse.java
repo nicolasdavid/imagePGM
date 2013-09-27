@@ -14,6 +14,9 @@ public class Tp_eclipse {
     public static void main(String[] args) {
         
         File fichier = new File();
-        System.out.println(fichier.chaine);
+        
+        
+        System.out.println(fichier.tailleX);
+        System.out.println(fichier.tailleY);
             }
 }

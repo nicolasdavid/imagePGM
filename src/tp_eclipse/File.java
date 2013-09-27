@@ -16,8 +16,12 @@ import java.io.InputStreamReader;
 public class File {
     
     
-    String chaine ="";
-    String fichier = "lena.pgm";
+    protected String chaine ="";
+    protected String fichier = "lena.pgm";
+    protected int tailleX = 1;
+    protected int tailleY = 1;
+    protected int niveau = 255;
+    
     
     public File(){
     //lecture du fichier texte	
@@ -26,16 +30,22 @@ public class File {
                 InputStreamReader ipsr=new InputStreamReader(ips);
                 BufferedReader br=new BufferedReader(ipsr);
                 String ligne;
+                int i = 0;
                 while ((ligne=br.readLine())!=null){
                         /*System.out.println(ligne);*/
                         chaine+=ligne+"\n";
+                        i++;
+                        if (i==3){
+                            String[] entiers = ligne.split(" ");
+                            this.tailleX = Integer.parseInt(entiers[0]);
+                            this.tailleY = Integer.parseInt(entiers[1]);
+                        }
                 }
                 br.close(); 
         }	
         catch (Exception e){
                             System.out.println(e.toString());
                     }
-
 
         }
 }
