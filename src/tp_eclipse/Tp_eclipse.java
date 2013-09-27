@@ -18,5 +18,9 @@ public class Tp_eclipse {
         
         System.out.println(fichier.tailleX);
         System.out.println(fichier.tailleY);
+        for(int i=0;i<255;i++){
+            System.out.println(i +" : "+ fichier.nuancier[i]);
+        }
+        
             }
 }

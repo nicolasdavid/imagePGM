@@ -21,7 +21,7 @@ public class File {
     protected int tailleX = 1;
     protected int tailleY = 1;
     protected int niveau = 255;
-    
+    protected int[] nuancier = new int[255];
     
     public File(){
     //lecture du fichier texte	
@@ -39,6 +39,13 @@ public class File {
                             String[] entiers = ligne.split(" ");
                             this.tailleX = Integer.parseInt(entiers[0]);
                             this.tailleY = Integer.parseInt(entiers[1]);
+
+                        }
+                        if(i>4){
+                            String[] entiers = ligne.split("	");
+                            for(int j=0;j<entiers.length; j++){
+                                this.nuancier[Integer.parseInt(entiers[j])]++;
+                            }
                         }
                 }
                 br.close(); 
